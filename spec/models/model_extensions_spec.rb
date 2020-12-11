@@ -336,6 +336,10 @@ describe ActsAsTenant do
     it "should not raise an error when no tenant is provided" do
       expect { ActsAsTenant.without_tenant { Project.all } }.to_not raise_error
     end
+
+    it 'does not raise an error for global records' do
+      expect(GlobalProject.new(name: "foo new").valid?).to be(true)
+    end
   end
 
   context "no tenant required" do
