@@ -22,6 +22,10 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
+      - run: |
+          echo 'BUNDLE_GEMFILE=${{ github.workspace }}/${{ matrix.gemfile }}' >> $GITHUB_ENV
+          echo $BUNDLE_GEMFILE
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
