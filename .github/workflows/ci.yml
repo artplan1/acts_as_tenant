@@ -7,6 +7,9 @@ on:
   push:
     branches:
       - master
+env:
+  BUNDLE_PATH_RELATIVE_TO_CWD: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
