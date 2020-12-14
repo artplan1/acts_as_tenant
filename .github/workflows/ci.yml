@@ -24,7 +24,11 @@ jobs:
 
       - run: |
           echo 'BUNDLE_GEMFILE=${{ github.workspace }}/${{ matrix.gemfile }}' >> $GITHUB_ENV
+
+      - run: |
           echo $BUNDLE_GEMFILE
+          echo ${{ env.BUNDLE_GEMFILE }}
+          echo $GITHUB_ENV
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
